@@ -1,0 +1,21 @@
+{
+  "name": "sit-gestionnaire",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "author": "Laye Soma Doumbia",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.4",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "sqlit": "^2.0.0",
+    "sqlite3": "^5.1.7"
+  }
+}
