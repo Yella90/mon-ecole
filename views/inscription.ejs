@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="">
+   <link rel="stylesheet" href="insc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+</head>
+<body>
+    <header>
+        <h2>
+            <%=datac.etabli%>-Ecole%>
+          </h2>
+          <h5>utilisateur:  <%=datac.user%></h5>
+        <a href="#deconnexion">Deconnexion</a>
+    </header>
+  <div class="container">
+    <form action="/inscription" method="post" class="infos">
+        <h2>    Inscription </h2>  
+                <input type="text" name="nom" placeholder="Nom" id="" required >
+                <input type="text" name="prenom" placeholder="Prenom" id="" required >     
+                <select name="genre" id=""  required >
+                    <option value="H">Garçon</option>
+                    <option value="F">Fille</option> 
+                </select>
+                <input type="date" name="age" id="" required >
+                <select name="nomclass" id=""  required >
+                    <% datac.clas.forEach(function(noms) { %>
+                        <option value=<%= noms.nom %> %>><%= noms.nom %> %></option>
+                    <% }); %>
+                   
+                </select>
+                
+                <select name="cycle" id=""  required >
+                    <option value="0">Jardin</option>
+                    <option value="1">1eme </option>
+                    <option value="2">2eme </option>
+                    <option value="3">3eme </option>
+                    <option value="4">4eme </option>
+                    <option value="5">5eme </option>
+                    <option value="6">6eme </option>
+                    <option value="7">7eme </option>
+                    <option value="8">8eme</option>
+                    <option value="9">9eme</option>
+                </select>
+                <h3>Parent</h3>
+                <input type="text" name="prenomp" placeholder="Prenom" id="" required >
+                <input type="tel" name="tel" id="" placeholder="Numéro" required >
+                <input type="text" name="address" placeholder="Adresse" required >
+                <input type="submit" value="Inscrire" class="submat">
+        </form>
+
+  </div>
+    
+    
+</body>
+</html>

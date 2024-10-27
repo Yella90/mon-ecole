@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="classe.css">
+<meta http-equiv="refresh" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creer une classe</title>
+</head>
+<body>
+
+    <header>
+        <h2>créer une nouvelle classe</h2>
+        <h2>
+            <%=datac.etabli%>-Ecole%>
+          </h2>
+          <h5>utilisateur:  <%=datac.user%></h5>
+    </header>
+
+    <div class="body">
+    
+   
+        <section class="action">
+            <a href="classe"> Crée une classe</a>
+            <a href="inscription">Inscrire un élève</a>
+            <a href="#/ajouter">Administrateur</a>
+            <a href="#payement">Effetuer un payement</a>
+            <a href="#prof">Gestion des Enseignants</a>
+            <a href="#emploi">Emploit du temps</a>
+    
+        </section>
+
+        <section class="form">
+    <form action="/classe" method="post" class="clas">
+        <h2>    Creé un e classe </h2>          
+            <input type="text" name="nom" id="" placeholder="classe ex(10eme A)">
+        <select name="cycle" id="" >
+            <option value="0">Jardin d'enfants</option>
+            <option value="1">1eme année</option>
+            <option value="2">2eme année</option>
+            <option value="3">3eme année</option>
+            <option value="4">4eme année</option>
+            <option value="5">5eme année</option>
+            <option value="6">6eme année</option>
+            <option value="7">7eme année</option>
+            <option value="8">8eme année</option>
+            <option value="9">9eme</option>
+        </select>
+        <input type="submit" value="Créer" class="submant">
+    </form>
+
+    <div class="data">
+        <table>
+            <thead>
+                <th>Nom</th>
+                <th>cycle</th>
+                <th>Effectifs</th>
+            </thead>
+           
+            <% datac.cl.forEach(function(d) { %>
+                <tbody>
+                    <td><%= d.nom %> </td>
+                    <td><%= d.cycle %> </td>
+                    <td><%= d.effectifs %> </td>
+                </tbody>
+                
+            <% }); %>
+           
+        </table>
+    </div>
+</section>
+</div>
+    
+</body>
+</html>
